@@ -17,7 +17,7 @@ class UserController extends Controller
         return response()->json(User::all());
     }
 
-    public function create(Request $request)
+    public static function create(Request $request)
     {
         try {
             $messages = makeMessages();
@@ -37,7 +37,7 @@ class UserController extends Controller
 
             return response()->json(['message' => 'Usuario creado correctamente', 'user' => $user], 201);
         } catch (\Exception $e) {
-            return response()->json(['message' => $e->getMessage()], 500);
+            return response()->json(['message' => $e->getMessage()], 401);
         }
     }
 

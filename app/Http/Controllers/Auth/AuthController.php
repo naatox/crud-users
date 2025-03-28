@@ -26,11 +26,5 @@ class AuthController extends Controller
         return response()->json(['message' => 'Sesión cerrada'], 200);
     }
 
-    public function register(Request $request)
-    {
-        $response = create($request);
 
-        return response()->json(['message' => 'Registro exitoso', 'register' => $response], 201);
-
-    }
 }
